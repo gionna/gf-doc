@@ -80,7 +80,7 @@ data :=
             ]
         }
     }`
-ifj, err := gjson.DecodeToJson([]byte(data)); err != nil {
+if j, err := gjson.DecodeToJson([]byte(data)); err != nil {
     glog.Error(err)
 } else {
     fmt.Println("John Score:", j.GetFloat32("users.list.1.score"))
